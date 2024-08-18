@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.use("/api/v1", rootRouter);
 app.get('/', (req,res)=>{
-    res.send("Hello")
+    res.send("Just checking")
 })
 app.listen(3000, ()=>{
     console.log("Server started on port: 3000")
