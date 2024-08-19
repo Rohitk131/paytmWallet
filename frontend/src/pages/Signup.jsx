@@ -25,45 +25,46 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className="h-[100vh] items-center flex justify-center px-5 lg:px-0">
-      <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
+    <div className="h-[100vh] flex items-center justify-center px-5 lg:px-0 bg-gradient-to-r from-blue-500 to-white relative overflow-hidden">
+      <div className="absolute inset-0 opacity-30 bg-[url('/background-pattern.svg')] bg-no-repeat bg-center bg-cover"></div>
+      <div className="relative z-10 bg-white rounded-2xl shadow-2xl p-8 sm:p-12 max-w-md w-full lg:w-1/2">
         <div className="flex flex-col items-center">
           <div className="text-center">
-            <h1 className="text-2xl xl:text-4xl font-extrabold text-blue-900">
+            <h1 className="text-4xl font-bold text-transparent text-blue-500">
               Paytm Wallet
             </h1>
-            <p className="text-[12px] text-gray-500">
+            <p className="text-sm text-gray-500 mt-2">
               Hey, enter your details to create your account
             </p>
           </div>
-          <div className="w-full flex-1 mt-8">
-            <div className="mx-auto max-w-xs flex flex-col gap-4">
+          <div className="w-full mt-8">
+            <div className="flex flex-col gap-6">
               <input
-                className="w-full px-5 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                className="w-full px-5 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-purple-400 focus:bg-white transition-all"
                 type="email"
                 placeholder="Enter your email"
                 onChange={(e) => setUsername(e.target.value)}
               />
               <input
-                className="w-full px-5 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                className="w-full px-5 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-purple-400 focus:bg-white transition-all"
                 type="text"
-                placeholder="Enter your firstname"
+                placeholder="Enter your first name"
                 onChange={(e) => setFirstname(e.target.value)}
               />
               <input
-                className="w-full px-5 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                className="w-full px-5 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-purple-400 focus:bg-white transition-all"
                 type="text"
-                placeholder="Enter your lastname"
+                placeholder="Enter your last name"
                 onChange={(e) => setLastname(e.target.value)}
               />
               <input
-                className="w-full px-5 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                className="w-full px-5 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-purple-400 focus:bg-white transition-all"
                 type="password"
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
               />
               <button
-                className="mt-5 tracking-wide font-semibold bg-blue-900 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
+                className="mt-5 tracking-wide font-semibold bg-blue-500 text-white w-full py-4 rounded-lg hover:from-purple-600 hover:to-blue-600 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
                 onClick={handleSignUp}
               >
                 <svg
@@ -83,7 +84,7 @@ const RegistrationForm = () => {
               <p className="mt-6 text-xs text-gray-600 text-center">
                 Already have an account?{" "}
                 <a href='/signin'>
-                  <span className="text-blue-900 font-semibold">Sign in</span>
+                  <span className="text-purple-600 font-semibold">Sign in</span>
                 </a>
               </p>
             </div>
