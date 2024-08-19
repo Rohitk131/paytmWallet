@@ -1,7 +1,8 @@
 import { Button } from "@headlessui/react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Spinner  from './Spinner'; 
+import Spinner from './Spinner'; 
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Users() {
   const [users, setUsers] = useState([]);
@@ -32,8 +33,8 @@ export default function Users() {
   if (loading) return <Spinner />; // Use a spinner for loading state
 
   return (
-    <div className="container mx-auto px-4 py-6">
-      <div className="font-bold text-2xl mb-4">Users</div>
+    <div className="container mx-auto px-4 py-6 h-screen">
+      <div className="font-bold text-2xl mb-4 text-white">Users</div>
       <div className="my-4">
         <input
           type="text"
@@ -55,6 +56,12 @@ export default function Users() {
 }
 
 function User({ user }) {
+  const navigate = useNavigate();
+
+  const handleSendMoney = () => {
+    navigate(`/send/${user._id}`);
+  };
+
   return (
     <div className="bg-slate-200 border border-gray-200 rounded-2xl shadow-2xl p-4 flex items-center justify-between">
       <div className="flex items-center space-x-4">
@@ -70,7 +77,10 @@ function User({ user }) {
           </span>
         </div>
       </div>
-      <Button className="bg-blue-600 text-white hover:bg-blue-700 rounded-xl px-4 py-2">
+      <Button 
+        className="bg-blue-600 text-white hover:bg-blue-700 rounded-xl px-4 py-2"
+        onClick={handleSendMoney}
+      >
         Send Money
       </Button>
     </div>

@@ -13,11 +13,12 @@ function App() {
         <Route path='/signup' element = {<SignupPg/>}/>
         <Route path='/signin' element = {<SigninPg/>}/>
         <Route path='/dashboard' element = {<Dashboard/>} />
-        <Route path='/send'  element = {<Send/>}/>
+        <Route path='/send/:userId' element={<Send />} />
       </Routes>
       </BrowserRouter>
     </>
   )
 }
+
 
 export default App

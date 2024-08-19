@@ -32,7 +32,7 @@ export default function Balance() {
     }, [balance]);
 
     return (
-        <div className="container mx-auto px-4 py-6">
+        <div className="container mx-auto px-4 pt-8">
             <div className="bg-slate-600 p-10 rounded-2xl shadow-lg">
                 {balance !== null ? (
                     <>
