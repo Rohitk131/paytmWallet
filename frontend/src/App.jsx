@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignupPg from './pages/Signup'
 import SigninPg from './pages/Signin'
 import Dashboard from './pages/Dashboard'
-import Send from './pages/Send'
+import  SendMoney  from "./pages/Send";
 import HomePg from './pages/HomePg'
 function App() {
   return (
@@ -13,7 +13,8 @@ function App() {
         <Route path='/signup' element = {<SignupPg/>}/>
         <Route path='/signin' element = {<SigninPg/>}/>
         <Route path='/dashboard' element = {<Dashboard/>} />
-        <Route path='/send/:userId' element={<Send />} />
+        <Route path="/send" element={<SendMoney />} />
+
       </Routes>
       </BrowserRouter>
     </>

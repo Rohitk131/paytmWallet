@@ -32,7 +32,7 @@ const SignInForm = () => {
       <div className="relative z-10 bg-white rounded-2xl shadow-2xl p-8 sm:p-12 max-w-md w-full lg:w-1/2">
         <div className="flex flex-col items-center">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-transparent text-blue-500 pb-2">
+            <h1 className="text-4xl font-bol font-bold text-blue-500 pb-2">
               Paytm Wallet
             </h1>
             <p className="text-sm text-gray-500 mt-2">Welcome Back!</p>

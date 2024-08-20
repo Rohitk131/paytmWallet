@@ -41,7 +41,7 @@ export default function Users() {
           placeholder="Search users..."
           value={filter}
           onChange={handleSearchChange}
-          className="w-1/4 px-4 py-2 border rounded-full border-gray-300 shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full sm:w-1/2 lg:w-1/4 px-4 py-2 border rounded-full border-gray-300 shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
       <div className="grid gap-4 md:grid-cols-1 lg:grid-cols-1">
@@ -57,32 +57,31 @@ export default function Users() {
 
 function User({ user }) {
   const navigate = useNavigate();
-
-  const handleSendMoney = () => {
-    navigate(`/send/${user._id}`);
-  };
-
   return (
-    <div className="bg-slate-200 border border-gray-200 rounded-2xl shadow-2xl p-4 flex items-center justify-between">
-      <div className="flex items-center space-x-4">
-        <div className="rounded-full h-16 w-16 bg-white flex items-center justify-center text-2xl font-semibold text-gray-800">
+    <div className="bg-slate-200 border border-gray-200 rounded-2xl shadow-2xl p-4 flex items-center justify-between flex-col sm:flex-row">
+      <div className="flex items-center space-x-4 mb-4 sm:mb-0">
+        <div className="rounded-full h-12 w-12 sm:h-16 sm:w-16 bg-white flex items-center justify-center text-xl sm:text-2xl font-semibold text-gray-800">
           {user.firstName[0]}
         </div>
         <div className="flex flex-col">
-          <span className="text-lg font-semibold text-gray-900">
-            {user.firstName} {user.lastName}
+          <span className="text-md sm:text-lg font-semibold text-gray-900">
+            {user.firstname} {user.lastName}
           </span>
+          
           <span className="text-sm text-gray-600">
-            {user._id}
+            {user.username}
           </span>
+
         </div>
       </div>
-      <Button 
-        className="bg-blue-600 text-white hover:bg-blue-700 rounded-xl px-4 py-2"
-        onClick={handleSendMoney}
-      >
-        Send Money
-      </Button>
+      <div className="flex flex-col justify-center w-full sm:w-auto">
+            <Button 
+              className="bg-blue-500 p-2 sm:p-3 sm:px-4 rounded-xl text-white font-semibold w-full sm:w-auto" 
+              onClick={(e) => {
+                navigate("/send?id=" + user._id + "&name=" + user.firstName);
+            }}>Send Money</Button>
+        </div>
+      
     </div>
   );
 }
