@@ -6,7 +6,8 @@ const rootRouter = require("./routes/index");
 const app = express();
 
 app.use(cors({
-    origin: 'https://paytm-wallet-backend.vercel.app'
+    origin: 'https://paytm-wallet-backend.vercel.app', 
+    credentials: true,
   }));
 
 app.use(express.json());
