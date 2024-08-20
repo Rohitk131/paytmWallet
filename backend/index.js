@@ -12,6 +12,11 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 }));
 
+app.options('*', cors({
+    origin: 'https://wallet-paytm.vercel.app',
+    credentials: true,
+}));
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
