@@ -12,7 +12,7 @@ export default function Users() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/v1/user/bulk', {
+        const response = await axios.get('https://paytm-wallet-backend.vercel.app/api/v1/user/bulk', {
           params: { filter } 
         });
         setUsers(response.data.user);
@@ -65,7 +65,7 @@ function User({ user }) {
         </div>
         <div className="flex flex-col">
           <span className="text-md sm:text-lg font-semibold text-gray-900">
-            {user.firstname} {user.lastName}
+            {user.firstName} {user.lastName}
           </span>
           
           <span className="text-sm text-gray-600">
